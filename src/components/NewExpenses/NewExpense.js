@@ -2,15 +2,14 @@ import "./NewExpense.css";
 import ExpenseForm from "./ExpenseForm";
 import { v4 as uuidv4 } from "uuid";
 
-const NewExpense = () => {
+const NewExpense = (props) => {
 
   const saveExpenseDataHander = (enteredExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,
       id: uuidv4().toString(),
     };
-
-    console.log(expenseData);
+    props.onAddExpense(expenseData);
   };
 
   return (
