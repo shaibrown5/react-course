@@ -4,6 +4,7 @@ import ExpensesFilter from "./ExpensesFilter";
 import { useState } from "react";
 import ExpensesList from "./ExpensesList";
 import ExpenseForm from "../NewExpenses/ExpenseForm";
+import ExpensesChart from "./ExpensesChart";
 import { filter } from "domutils";
 
 const Expenses = (props) => {
@@ -25,6 +26,7 @@ const Expenses = (props) => {
           selected={filteredYear}
           onChangeYearFilter={filterChangeHandler}
         />
+        <ExpensesChart expenses={filteredExpenses}/>
         <ExpensesList items={filteredExpenses} />
       </Card>
     </div>
